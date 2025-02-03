@@ -2699,12 +2699,24 @@ footer.footer{
 /******************************************/
 /****   	 25. Responsive css   	   ****/
 /******************************************/
-
+@media only screen and (max-width: 1199px){
+	.menu-div {
+		grid-template-columns: 1fr 1fr 1fr !important;
+	}
+	#hero-carousel{
+		height: 40vh;
+	}
+}
 @media only screen and (max-width: 991px){
+	#hero-carousel{
+		height: 80vh;
+	}
     #magic-cursor {
         display: none !important;
     }
-
+	.menu-div {
+		grid-template-columns: 1fr 1fr !important;
+	}
 	.responsive-menu,
     .navbar-toggle{
         display: block;
@@ -2724,6 +2736,7 @@ footer.footer{
 
     .hero-content{
         padding-right: 0;
+		margin-top: 20px;
     }
 
     .hero-image{
@@ -2825,7 +2838,7 @@ footer.footer{
     .footer-social,
     .footer-menu,
     .copyright{
-        text-align: center;
+        /* text-align: center; */
         margin-bottom: 20px;
     }
 
@@ -2963,6 +2976,10 @@ footer.footer{
 }
 
 @media only screen and (max-width: 767px){
+
+	.menu-div {
+		grid-template-columns: 1fr !important;
+	}
    
     .btn-default{
         font-size: 16px;
