@@ -2759,6 +2759,14 @@ footer.footer{
 .sec-pad{
 	padding: 70px 0;
 }
+.gallery-sec .g-sec{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 40px;
+}
+.g-img img{
+	border-radius: 10px 10px 2px 10px;
+}
 /******************************************/
 /****   	 25. Responsive css   	   ****/
 /******************************************/
@@ -2771,6 +2779,11 @@ footer.footer{
 	}
 }
 @media only screen and (max-width: 991px){
+	.gallery-sec .g-sec{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 20px;
+	}
 	.cont-img{
 		margin-bottom: 30px;
 	}
@@ -2855,7 +2868,7 @@ footer.footer{
     }
 
     .fun-facts .section-title{
-        text-align: center;
+        /* text-align: center; */
         margin-bottom: 30px;
     }
 
@@ -3045,6 +3058,10 @@ footer.footer{
 }
 
 @media only screen and (max-width: 767px){
+
+	.gallery-sec .g-sec{
+		grid-template-columns: 1fr;
+	}
 
 	.sec-pad{
 		padding: 40px 0;
