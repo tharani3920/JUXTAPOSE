@@ -2777,6 +2777,7 @@ footer.footer{
 	#hero-carousel{
 		height: 60vh;
 	}
+
 }
 @media only screen and (max-width: 991px){
 	.gallery-sec .g-sec{
@@ -2791,7 +2792,7 @@ footer.footer{
 		padding: 50px 0;
 	}
 	#hero-carousel{
-		height: 80vh;
+		height: 50vh;
 	}
     #magic-cursor {
         display: none !important;
@@ -3058,7 +3059,9 @@ footer.footer{
 }
 
 @media only screen and (max-width: 767px){
-
+	#hero-carousel{
+		height: 70vh;
+	}
 	.gallery-sec .g-sec{
 		grid-template-columns: 1fr;
 	}
@@ -3707,4 +3710,103 @@ button.back-to-top{
 	width: 120px;
 	border: 2px solid var(--dbrush-color);
 	border-radius: 10px;
+}
+
+.swiper {
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+	margin-top: -121px;
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+}
+.swiper-slide {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 50px 50px;
+}
+
+/* Two Column Layout */
+.slide-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    margin-top: 100px;
+    padding: 0px 20px;
+}
+
+.text-content {
+	padding: 20px;
+}
+
+.text-content h2 {
+	font-size: 2.5rem;
+	margin-bottom: 10px;
+}
+
+.text-content p {
+	font-size: 1.2rem;
+	line-height: 1.5;
+}
+
+.image-content img {
+	width: 100%;
+	max-width: 500px;
+	border-radius: 10px;
+}
+
+/* Swiper Arrows */
+.swiper-button-next,
+.swiper-button-prev {
+	color: white;
+}
+
+.slide-content{
+
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.slide-content {
+		grid-template-columns: 1fr;
+		text-align: center;
+	}
+
+	.image-content {
+		margin-top: 20px;
+	}
+}
+
+@media only screen and (max-width: 1199px){
+	.swiper {
+		height: 80vh;
+	}
+	.text-content {
+		padding: 0px;
+	}
+}
+@media only screen and (max-width: 992px){
+	.image-content{
+		display: none;
+	}
+	.slide-content {
+		grid-template-columns: 1fr;
+		/* text-align: center; */
+	}
+	.s-img{
+		display: none;
+	}
+}
+
+@media only screen and (max-width:767px){
+	.swiper {
+		height: 85vh;
+	}
+	.image-content{
+		display: none;
+	}
 }

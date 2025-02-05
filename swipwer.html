@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Carousel</title>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: black;
+            color: white;
+        }
+
+        /* Swiper Container */
+        .swiper {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+        }
+
+        /* Two Column Layout */
+        .slide-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .text-content {
+            padding: 20px;
+        }
+
+        .text-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .text-content p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+
+        .image-content img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+        /* Swiper Arrows */
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .slide-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .image-content {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Swiper Carousel -->
+    <div class="swiper">
+        <div class="swiper-wrapper">
+
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <div class="text-content">
+                        <h2>Transform Your Look</h2>
+                        <p>Discover the latest trends and expert styling that make you shine.</p>
+                    </div>
+                    <div class="image-content">
+                        <img src="https://source.unsplash.com/500x500/?salon,hair" alt="Salon">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <div class="text-content">
+                        <h2>Luxury at Your Fingertips</h2>
+                        <p>Experience premium beauty treatments that refresh and rejuvenate.</p>
+                    </div>
+                    <div class="image-content">
+                        <img src="https://source.unsplash.com/500x500/?spa,beauty" alt="Luxury Spa">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <div class="text-content">
+                        <h2>Style That Speaks</h2>
+                        <p>Elevate your confidence with a hairstyle tailored just for you.</p>
+                    </div>
+                    <div class="image-content">
+                        <img src="https://source.unsplash.com/500x500/?fashion,haircut" alt="Fashion Haircut">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper(".swiper", {
+            loop: true, 
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            grabCursor: true,
+        });
+    </script>
+
+</body>
+</html>
