@@ -2775,7 +2775,7 @@ footer.footer{
 		grid-template-columns: 1fr 1fr 1fr !important;
 	}
 	#hero-carousel{
-		height: 40vh;
+		height: 60vh;
 	}
 }
 @media only screen and (max-width: 991px){
