@@ -1005,7 +1005,7 @@ header.main-header .header-sticky.active{
 
 .service-item-layout1{
 	text-align: center;
-	padding: 0 50px;
+	padding: 0 15px;
 	position: relative;
 }
 
@@ -1024,7 +1024,24 @@ header.main-header .header-sticky.active{
 	display: none;
 }
 
-.service-item-layout1 .service-icon{
+.service-item-layout.service-icon{
+	width: 100%;
+	display: flex;
+	max-width: 100px;
+	aspect-ratio: 1/1;
+	height: auto;
+	justify-content: center;
+	align-items: center;
+	background: var(--primary-color);
+	border-radius: 50px 50px 50px 6px;
+	margin: 0 auto 10px;
+	transition: var(--transition);
+}
+
+.service-item-layout.service-icon img{
+	max-width: 50%;
+}
+.service-item-layout1 .service-icons{
 	width: 100%;
 	display: flex;
 	max-width: 100px;
@@ -1038,7 +1055,7 @@ header.main-header .header-sticky.active{
 	transition: var(--transition);
 }
 
-.service-item-layout1 .service-icon img{
+.service-item-layout1 .service-icons img{
 	max-width: 50%;
 }
 
@@ -1053,7 +1070,7 @@ header.main-header .header-sticky.active{
 	margin-bottom: 0;
 }
 
-.service-item-layout1:hover .service-icon{
+.service-item-layout:hover.service-icon{
 	transform: scale(0.9);
 }
 
@@ -2062,14 +2079,74 @@ footer.footer{
 }
 
 .service-item-layout2 .service-content{
-	padding: 40px;
-	text-align: center;
+	padding: 25px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 5px;
+	position: relative;
+	overflow: hidden;
 }
-
+.service-item-layout2 .service-content::before{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 0%;
+		border-radius: 80px;
+		opacity: 0;
+		background: var(--primary-color);
+		transition: var(--transition);
+	}
+	.service-item-layout2 .service-content:hover::before{
+		width: 100%;
+		border-radius:0 ;
+		opacity: 1;
+	}
+	.service-item-layout2 .service-content:hover h3 {
+		color: var(--white);
+		z-index: 0;
+	}
+	.service-item-layout2 .service-content:hover .menu-pricing-price{
+		background-color: var(--white);
+	}
+	.service-item-layout2 .service-content:hover .menu-pricing-price p{
+		color: var(--primary-color);
+	}
+	.services-lists .row+.row{
+		margin-top: 10px;
+		border-top: 2px solid var(--primary-color);
+		padding-top: 30px;
+	}
+.menu-pricing-price{
+		width: 80px;
+		height: 80px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: var(--primary-color);
+		border-radius: 50px 50px 50px 8px;
+		position: relative;
+		z-index: 1;
+		transition: var(--transition);
+	}
+	.menu-pricing-price p {
+		display: block;
+		margin: 0;
+		font-size: 26px;
+		font-family: var(--accent-font);
+		color: var(--dark-primary-color);
+		font-weight: 700;
+		transition: var(--transition);
+	}
+	.menu-pricing-price:hover p {
+		color: var(--dbrush-color);
+	}
 .service-item-layout2 .service-content h3{
 	font-size: 22px;
 	color: var(--primary-color);
-	margin-bottom: 15px;
+	margin-bottom: 0px;
 }
 
 .service-item-layout2 .service-content p{
