@@ -327,6 +327,15 @@ a:focus{
     bottom: -35px;
 	display: none;
 }
+.carousel-item {
+    display: none;
+}
+
+.carousel-item.active {
+    display: block;
+    /* transition: opacity 0.9s ease-in-out; */
+}
+
 .section-title{
 	text-align: center;
 	margin-bottom: 40px;
@@ -1313,9 +1322,10 @@ header.main-header .header-sticky.active{
 
 .pricing-item{
 	background: var(--dark-primary-color);
-	padding: 40px;
+	padding: 20px;
 	/* margin-bottom: 30px; */
 	display: flex;
+	align-items: center;
 	flex-wrap: wrap;
 	border-radius: 50px 50px 10px 50px;
 	overflow: hidden;
@@ -1343,34 +1353,35 @@ header.main-header .header-sticky.active{
 }
 .menu-div .pricing-info{
 	background: var(--dark-primary-color);
-	padding: 20px;
+	padding: 10px;
 	display: flex;
 	flex-wrap: wrap;
 	border-radius: 50px 50px 10px 50px;
 	overflow: hidden;
 	position: relative;
 }
-
-.menu-div .pricing-info h3{
-	width: 100%;
-	text-align: center;
-	margin-bottom: 0;
+.pricing-item 	.pricing-info h3{
+	font-family: var(--accent-font);
+	margin-top: 0;
+	font-weight: 700;
 }
-.menu-div .pricing-info h3:hover{
+.pricing-info h3:hover{
 	color: var(--dbrush-color);
-}
+	}
 .menu-div{
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr ;
 	grid-gap: 20px;
 }
 .pricing-item .pricing-info h3{
-	font-size: 22px;
+	font-size: 26px;
 	font-weight: 700;
-	margin-bottom: 10px;
+	margin-bottom: 0px;
 	color: var(--primary-color);
 }
-
+.pricing-item .pricing-info h3:hover{
+	color: var(--dbrush-color);
+}
 .pricing-item .pricing-info p{
 	margin-bottom: 0;
 }
@@ -1699,12 +1710,15 @@ footer.footer{
 	margin-bottom: 20px;
 }
 .contact-info-item p{
-	color: var(--white);
-	margin-bottom: 10px;
-		font-size: 16px;
-		font-weight: 400;
-		font-family: var(--default-font);
+	color: #FFFFFF;
 }
+.contact-info-item .logo-text p{
+		margin-bottom: 0;
+		line-height: 1;
+		font-family: poppins;
+		font-weight: 700;
+		font-size: 24px;
+	}
 .contact-info-item .cont-foot a p:hover{
 	color: var(--dbrush-color);
 }
@@ -3232,7 +3246,7 @@ footer.footer{
     }
 
     .pricing-item{
-        padding: 30px;
+        padding: 15px;
         border-radius: 30px 30px 8px 30px;
     }
 
@@ -3808,5 +3822,25 @@ button.back-to-top{
 	}
 	.image-content{
 		display: none;
+	}
+	.hero-content-body ul li {
+		display: flex;
+		flex-direction: column;
+	}.hero-content-body ul li+li {
+		margin-top: -12px;
+	}
+	.hero-content-body ul li span+span {
+		margin-left: 0px;
+	}
+	#hero-carousel .carousel-control-next {
+		right: 0;
+	}
+}
+@media only screen and (max-width:375px){
+	.logo-text p {
+		font-size: 17px;
+	}
+	.contact-info-item .logo-text p {
+		font-size: 17px;
 	}
 }
