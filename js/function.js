@@ -23,7 +23,7 @@
 		var fromTop = $(window).scrollTop();
 		var headerHeight = $('header .header-sticky').outerHeight()
 		$("header .header-sticky").toggleClass("hide", (fromTop > headerHeight + 100));
-		$("header .header-sticky").toggleClass("active", (fromTop > 800));
+		$("header .header-sticky").toggleClass("active", (fromTop > 200));
 	});
 
 	/* Slick Menu JS */
@@ -343,4 +343,47 @@ $('button.back-to-top').click(function() {
     scrollTop: 0
   }, 800);
   return false;
+});
+
+$(document).ready(function () {
+    let serviceDetails = document.querySelectorAll('.service-details');
+    serviceDetails.forEach(function (element, index) {
+        if (index > 0) {
+            element.style.display = 'none';
+        }
+    });
+
+    let x = document.URL;
+    if (x.includes("#")) {
+        x = x.split("#");
+        const name = `#${x[x.length - 1]}`;
+
+        if ($(name).not('.active')) {
+            $(name).addClass('active');
+            $(name).siblings().removeClass('active');
+        }
+
+        var dataTarget = $(name).attr("data-target");
+        $(dataTarget).fadeIn();
+        $(dataTarget).siblings().hide();
+
+        $("html, body").animate({
+            scrollTop: $(dataTarget).offset().top - 85
+        }, "slow");
+    }
+
+    $(".sidebar-menu-layout1>ul>li").click(function () {
+        if ($('.sidebar-menu-layout1>ul>li').not('.active')) {
+            $(this).addClass('active');
+            $(this).siblings().removeClass('active');
+        }
+
+        var dataTarget = $(this).attr("data-target");
+        $(dataTarget).fadeIn();
+        $(dataTarget).siblings().hide();
+
+        $("html, body").animate({
+            scrollTop: $(dataTarget).offset().top - 85
+        }, "slow");
+    });
 });
